@@ -4,24 +4,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
- * @subpackage 2DREI
- * @since 2DREI 1.0
- */
-
-/**
- * Table of Contents:
- * Theme Support
- * Required Files
- * Register Styles
- * Register Scripts
- * Register Menus
- * Custom Logo
- * WP Body Open
- * Register Sidebars
- * Enqueue Block Editor Assets
- * Enqueue Classic Editor Styles
- * Block Editor Settings
+ * @package 2DREI.EINS
+ * @subpackage 2DREI.EINS
+ * @since 2DREI.EINS
+ * @version 0.1
  */
 
 /**
@@ -31,7 +17,7 @@
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function ags_theme_support() {
+function zweidrei_eins_setup() {
 
     /*
     * Let WordPress manage the document title.
@@ -43,38 +29,30 @@ function ags_theme_support() {
 
 }
 
-add_action('after_setup_theme', 'ags_theme_support');
+add_action('after_setup_theme', 'zweidrei_eins_setup');
 
 /**
  * Register navigation menus uses wp_nav_menu in five places.
  */
-function twentytwenty_menus() {
+function zweidrei_eins_menus() {
 
 	$locations = array(
-		'header' => __( 'Header Menu', 'libretto' ),
-		'footer'  => __( 'Footer Menu', 'libretto' ),
+		'header' => __( 'Header Menu'),
+		'footer'  => __( 'Footer Menu'),
     );
 
 	register_nav_menus( $locations );
 }
 
-add_action('init', 'twentytwenty_menus');
+add_action('init', 'zweidrei_eins');
 
 /**
  * Register and Enqueue Styles.
  */
-function twentytwenty_register_styles() {
+function zweidrei_eins_register_styles() {
 
-	$theme_version = wp_get_theme()->get( 'Version' );
-    
-	wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
-	//wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
-
-	// Add output of Customizer settings as inline style.
-	//wp_add_inline_style( 'twentytwenty-style', twentytwenty_get_customizer_css( 'front-end' ) );
-
-	// Add print CSS.
-	//wp_enqueue_style( 'twentytwenty-print-style', get_template_directory_uri() . '/print.css', null, $theme_version, 'print' );
+	$theme_version = wp_get_theme()->get( 'Version' );    
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), $theme_version );
 
 	/** 	
 	 * Add custom css
@@ -90,7 +68,7 @@ function twentytwenty_register_styles() {
 
 }
 
-add_action('wp_enqueue_scripts', 'twentytwenty_register_styles');
+add_action('wp_enqueue_scripts', 'zweidrei_eins_register_styles');
 
 function wpa_content_filter($content) {
     return str_replace('<h2>','<h2 class="title is-2">',$content);

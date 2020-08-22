@@ -6,10 +6,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WordPress
- * @subpackage 2Drei
- * @since 2Drei
- * @version 1.0
+ * @package 2DREI.EINS
+ * @subpackage 2DREI.EINS
+ * @since 2DREI.EINS
+ * @version 0.1
  */
 
 ?><!DOCTYPE html>

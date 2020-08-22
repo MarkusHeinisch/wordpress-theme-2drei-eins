@@ -4,10 +4,10 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package WordPress
- * @subpackage 2DREI
- * @since 2DREI
- * @version 1.0
+ * @package 2DREI.EINS
+ * @subpackage 2DREI.EINS
+ * @since 2DREI.EINS
+ * @version 0.1
  */
 
 get_header(); ?>
